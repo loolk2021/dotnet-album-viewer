@@ -18,7 +18,8 @@ pipeline {
                 dir('D:/Jenkin2024/test.bat') {
                     /* execute commands in the scripts directory */
                 }
-		echo '%BUILD_NUMBER%'
+		//echo '%BUILD_NUMBER%'
+		echo "Build number is: ${env.BUILD_NUMBER}"
 		
             bat 'D:/Jenkin2024/test.bat'
             }
