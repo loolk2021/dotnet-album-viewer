@@ -59,6 +59,8 @@ pipeline {
                 bat 'D:/Jenkin2024/test.bat'
             }
         }
+	  
+}
 	    
     }
 }
