@@ -88,7 +88,9 @@ pipeline {
                 bat 'D:/Jenkin2024/test.bat'
             }
         }
-	  post {
+	 
+    }
+	 post {
        failure {mail to: 'loo.laikuan@silverlakeaxis.com',
        subject: "Pipeline has failed: ${currentBuild.fullDisplayName}",
        body: "Error in ${env.BUILD_URL}"
@@ -96,7 +98,6 @@ pipeline {
 } 
 
 	    
-    }
 }
 
 
