@@ -61,12 +61,13 @@ pipeline {
         }
 	post {
 	    failure {
-		mail to: 'loo.laikuan@silverlakeaxis.com',
-	        subject: "Pipeline has failed: ${currentBuild.fullDisplayName}",
-	        body: "Error in ${env.BUILD_URL}"
+	        mail to: 'loo.laikuan@silverlakeaxis.com',
+	             subject: "Pipeline has failed: ${currentBuild.fullDisplayName}",
+	             body: "Error in ${env.BUILD_URL}"
 	    }
 	}
-	    
+
+	
 	    
     }
 }
