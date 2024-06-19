@@ -38,6 +38,14 @@ pipeline {
                 bat 'D:/Jenkin2024/test.bat'
             }
         }
+	stage('Production') {
+            steps {
+                dir('D:/Jenkin2024/test.bat') {
+                    /* execute commands in the scripts directory */
+                }
+                bat 'D:/Jenkin2024/test.bat'
+            }
+        }
     }
 }
 
