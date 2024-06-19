@@ -4,6 +4,13 @@ pipeline {
     }
     /*triggers{
 	cron('H/3 * * * *')    
+    }
+   environment {
+        // Define environment variables here
+        JDK = "value"
+        ANOTHER_VARIABLE = "another value"
+        // You can also use expressions or function calls
+        PATH_TO_TOOL = tool 'ToolName'
     }*/	
     stages {
         stage('Build') {
@@ -11,6 +18,8 @@ pipeline {
                 dir('D:/Jenkin2024/test.bat') {
                     /* execute commands in the scripts directory */
                 }
+		echo '%BUILD_NUMBER%'
+		
             bat 'D:/Jenkin2024/test.bat'
             }
         }
