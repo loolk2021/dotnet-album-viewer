@@ -85,7 +85,7 @@ pipeline {
                 dir('D:/Jenkin2024/test.bat') {
                     /* execute commands in the scripts directory */
                 }
-                bat 'D:/Jenkin2024/test.bat'
+                bat 'D:/Jenkin2024/test1.bat'
             }
         }
 	 
