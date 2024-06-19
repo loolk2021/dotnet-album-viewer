@@ -1,17 +1,44 @@
 pipeline {
-    agent any
-
+    agent {
+        label 'linux_node3'
+    }
     stages {
         stage('Build') {
             steps {
-                echo 'Build started'
+                dir('D:/Jenkin2024/test.bat') {
+                    /* execute commands in the scripts directory */
+                }
+            bat 'D:/Jenkin2024/test.bat'
             }
         }
-        stage('Design') {
+        stage('Test') {
+			agent {
+                label 'linux_node2'
+            }
             steps {
-                echo 'Designing started'
+                dir('D:/Jenkin2024/test.bat') {
+                    /* execute commands in the scripts directory */
+                }
+                bat 'D:/Jenkin2024/test.bat'
+            }
+        }
+      stage('Package') {
+            steps {
+                dir('D:/Jenkin2024/test.bat') {
+                    /* execute commands in the scripts directory */
+                }
+                bat 'D:/Jenkin2024/test.bat'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                dir('D:/Jenkin2024/test.bat') {
+                    /* execute commands in the scripts directory */
+                }
+                bat 'D:/Jenkin2024/test.bat'
             }
         }
     }
 }
+
 
