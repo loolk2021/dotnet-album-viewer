@@ -15,21 +15,21 @@ pipeline {
     stages {
 	stage('Parallel') {
             parallel {
-                stage('Compile') {
+                stage('Task One') {
                     steps {
-                        echo 'Compiling...'
+                        echo 'Task One...'
                         // Compile your code here
                     }
                 }
-                stage('Unit Tests') {
+                stage('Task Two') {
                     steps {
-                        echo 'Running Unit Tests...'
+                        echo 'Running task two...'
                         // Run unit tests here
                     }
                 }
-                stage('Integration Tests') {
+                stage('Task Three') {
                     steps {
-                        echo 'Running Integration Tests...'
+                        echo 'Running Task Three...'
                         // Run integration tests here
                     }
                 }
