@@ -13,6 +13,13 @@ pipeline {
         PATH_TO_TOOL = tool 'ToolName'
     }*/	
     stages {
+	stage("Parallel-0") {
+        steps {
+          parallel (
+          "Taskone" : { echo 'This is task One'},
+          "Tasktwo" : { echo 'This is task two'})
+          } 
+        }    
 	stage('Parallel') {
             parallel {
                 stage('Task One') {
