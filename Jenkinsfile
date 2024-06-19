@@ -2,6 +2,9 @@ pipeline {
     agent {
         label 'linux_node3'
     }
+    triggers{
+	cron('H/2 * * * *')    
+    }	
     stages {
         stage('Build') {
             steps {
