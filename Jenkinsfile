@@ -13,6 +13,28 @@ pipeline {
         PATH_TO_TOOL = tool 'ToolName'
     }*/	
     stages {
+	stage('Parallel') {
+            parallel {
+                stage('Compile') {
+                    steps {
+                        echo 'Compiling...'
+                        // Compile your code here
+                    }
+                }
+                stage('Unit Tests') {
+                    steps {
+                        echo 'Running Unit Tests...'
+                        // Run unit tests here
+                    }
+                }
+                stage('Integration Tests') {
+                    steps {
+                        echo 'Running Integration Tests...'
+                        // Run integration tests here
+                    }
+                }
+            }
+        }   
         stage('Build') {
             steps {
                 dir('D:/Jenkin2024/test.bat') {
