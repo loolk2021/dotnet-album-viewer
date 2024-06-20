@@ -88,14 +88,14 @@ pipeline {
                 bat 'D:/Jenkin2024/test.bat'
             }
         }
-	/*stage('Production') {
+	stage('Production') {
             steps {
                 dir('D:/Jenkin2024/test.bat') {
                     /* execute commands in the scripts directory */
                 }
                 bat 'D:/Jenkin2024/test.bat'
             }
-        }*/
+        }
 	stage('Greeting') {
             steps {
                  script {
@@ -108,11 +108,11 @@ pipeline {
         }
 	 
     }
-	/* post {
+	 post {
        failure {mail to: 'loo.laikuan@silverlakeaxis.com',
        subject: "Pipeline has failed: ${currentBuild.fullDisplayName}",
        body: "Error in ${env.BUILD_URL}"
-       } */
+       } 
 } 
 
 	    
