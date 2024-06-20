@@ -23,6 +23,9 @@ pipeline {
 	stage('Parallel') {
             parallel {
                 stage('Task One') {
+		    agent {
+                        label 'linux_node2'  // Define agent label for Task One
+                    }
                     steps {
                         echo 'Task One...'
                         // Compile your code here
