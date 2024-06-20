@@ -12,6 +12,11 @@ pipeline {
         // You can also use expressions or function calls
         PATH_TO_TOOL = tool 'ToolName'
     }*/	
+ parameters {         
+            string(name: 'p_age', defaultValue: '20', description: 'The greeting message')         
+            string(name: 'p_name', defaultValue: 'Jane', description: 'The name to greet')
+            string(name: 'p_greeting', defaultValue: 'Hello', description: 'The greeting message')       
+        }    	
     stages {
 	stage("Parallel-0") {
         steps {
@@ -23,9 +28,9 @@ pipeline {
 	stage('Parallel') {
             parallel {
                 stage('Task One') {
-		    agent {
+		    /*agent {
                         label 'linux_node2'  // Define agent label for Task One
-                    }
+                    }*/
                     steps {
                         echo 'Task One...'
                         // Compile your code here
@@ -89,6 +94,16 @@ pipeline {
                     /* execute commands in the scripts directory */
                 }
                 bat 'D:/Jenkin2024/test.bat'
+            }
+        }
+	stage('Greeting') {
+            steps {
+                 script {
+                   // def p_greeting = "Hello"
+                    def greetingMessage="${p_greeting} ${p_name}"
+                    echo "${p_greeting} ${p_name}"
+                    echo "${greetingMessage}"
+                 }
             }
         }
 	 
